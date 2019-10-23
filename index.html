@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+<style type="text/css">
+    .bordered {
+        border:solid 2px black;
+    }
+    .colorred {
+        color: red;
+    }
+    .highlight {
+        background:yellow;
+    }
+    .backred {
+        background: red;
+    }
+    p {
+        cursor: pointer;
+    }
+</style>
+<script type="text/javascript">
+    console.log("opened this document.");
+    $(function(){
+        $("#hoge").click(function(){
+            console.clear();
+            console.log("clicked #hoge")
+            $(this).toggleClass("colorred");
+        });
+        $(".foo").click(function(){
+            console.clear();
+            console.log("clicked .foo")
+            $(this).toggleClass("highlight");
+        });
+    });
+</script>
+</head>
+<body>
+    <div style="text-align: center;" width=400>
+        <p id="hoge" class="foo bordered">ID:hoge</p>
+        <p class="foo bordered">IDなし</p>
+        <p class="foo bordered">IDなし</p>
+    </div>
+</body>
+</html>
